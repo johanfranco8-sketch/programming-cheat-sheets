@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Catálogo de hojas de trucos de programación en español">
+  <title>Programming Cheat Sheets</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="hero">
+    <p class="eyebrow">Programming Cheat Sheets</p>
+    <h1>Consulta, aprende y practica programación</h1>
+    <p>Hojas de trucos en español, referencias rápidas y mini proyectos para reforzar tus habilidades.</p>
+    <label class="search" for="buscador">
+      <span>Buscar tecnología</span>
+      <input id="buscador" type="search" placeholder="Ej.: Python, Git, SQL..." autocomplete="off">
+    </label>
+  </header>
+
+  <main>
+    <section aria-labelledby="titulo-catalogo">
+      <div class="section-heading">
+        <h2 id="titulo-catalogo">Catálogo</h2>
+        <p id="resultado" aria-live="polite">9 tecnologías disponibles</p>
+      </div>
+      <div id="tarjetas" class="grid">
+        <article class="card" data-search="python programación funciones listas diccionarios">
+          <h3>Python</h3><p>Sintaxis, colecciones, funciones, archivos y errores.</p><a href="../python/cheat-sheet.md">Hoja completa</a><a href="../python/quick-reference.md">Referencia rápida</a>
+        </article>
+        <article class="card" data-search="javascript js dom eventos asincronía">
+          <h3>JavaScript</h3><p>DOM, arreglos, objetos y asincronía.</p><a href="../javascript/cheat-sheet.md">Hoja completa</a><a href="../projects/javascript/lista-tareas.html">Mini proyecto</a>
+        </article>
+        <article class="card" data-search="git github commit ramas remoto">
+          <h3>Git</h3><p>Commits, ramas, remotos y recuperación.</p><a href="../git/cheat-sheet.md">Hoja completa</a><a href="../git/quick-reference.md">Referencia rápida</a>
+        </article>
+        <article class="card" data-search="css flexbox grid responsive estilos">
+          <h3>CSS</h3><p>Diseño responsivo, Flexbox, Grid y animaciones.</p><a href="../css/cheat-sheet.md">Hoja completa</a><a href="../projects/html-css/tarjeta-perfil.html">Mini proyecto</a>
+        </article>
+        <article class="card" data-search="html semántica formularios accesibilidad">
+          <h3>HTML</h3><p>Estructura, formularios y accesibilidad.</p><a href="../html/cheat-sheet.md">Hoja completa</a><a href="../projects/html-css/tarjeta-perfil.html">Mini proyecto</a>
+        </article>
+        <article class="card" data-search="sql base datos select join consultas">
+          <h3>SQL</h3><p>Consultas, filtros, agregaciones y JOIN.</p><a href="../sql/cheat-sheet.md">Hoja completa</a>
+        </article>
+        <article class="card" data-search="bash powershell terminal consola comandos">
+          <h3>Bash y PowerShell</h3><p>Archivos, búsquedas, scripts y terminal.</p><a href="../bash-powershell/cheat-sheet.md">Hoja completa</a>
+        </article>
+        <article class="card" data-search="java clases objetos colecciones">
+          <h3>Java</h3><p>Clases, métodos, colecciones y excepciones.</p><a href="../java/cheat-sheet.md">Hoja completa</a>
+        </article>
+        <article class="card" data-search="typescript ts tipos interfaces generics">
+          <h3>TypeScript</h3><p>Tipos, interfaces, uniones y genéricos.</p><a href="../typescript/cheat-sheet.md">Hoja completa</a>
+        </article>
+      </div>
+      <p id="sin-resultados" class="empty" hidden>No se encontraron tecnologías con esa búsqueda.</p>
+    </section>
+  </main>
+  <footer><p>Creado por Johan Sebastian Franco Montenegro · Licencia MIT</p></footer>
+  <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tarjeta de perfil</title>
+  <style>
+    :root { --primario: #2563eb; --fondo: #eff6ff; } * { box-sizing: border-box; } body { min-height: 100vh; margin: 0; display: grid; place-items: center; padding: 1rem; font-family: system-ui, sans-serif; background: var(--fondo); } .tarjeta { width: min(100%, 380px); padding: 2rem; border-radius: 1rem; text-align: center; background: white; box-shadow: 0 12px 30px rgb(15 23 42 / .15); } .avatar { width: 96px; aspect-ratio: 1; display: grid; place-items: center; margin: auto; border-radius: 50%; color: white; font-size: 2rem; background: var(--primario); } .boton { display: inline-block; margin-top: 1rem; padding: .7rem 1rem; border-radius: .5rem; color: white; text-decoration: none; background: var(--primario); } .boton:hover { filter: brightness(.9); }
+  </style>
+</head>
+<body>
+  <article class="tarjeta">
+    <div class="avatar" aria-hidden="true">JF</div>
+    <h1>Johan Franco</h1>
+    <p>Estudiante y desarrollador de proyectos web.</p>
+    <a class="boton" href="mailto:correo@ejemplo.com">Contactar</a>
+  </article>
+</body>
+</html>

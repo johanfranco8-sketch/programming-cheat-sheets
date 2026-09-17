@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lista de tareas</title>
+  <style>
+    body { font-family: system-ui, sans-serif; max-width: 640px; margin: 2rem auto; padding: 1rem; background: #f8fafc; color: #0f172a; }
+    form { display: flex; gap: .5rem; } input { flex: 1; padding: .7rem; } button { cursor: pointer; padding: .7rem 1rem; } li { display: flex; justify-content: space-between; margin: .5rem 0; padding: .7rem; background: white; border-radius: .5rem; } .hecha { text-decoration: line-through; opacity: .6; }
+  </style>
+</head>
+<body>
+  <h1>Mis tareas</h1>
+  <form id="formulario">
+    <input id="tarea" placeholder="Nueva tarea" required>
+    <button>Agregar</button>
+  </form>
+  <ul id="lista"></ul>
+
+  <script>
+    const formulario = document.querySelector('#formulario');
+    const entrada = document.querySelector('#tarea');
+    const lista = document.querySelector('#lista');
+    let tareas = JSON.parse(localStorage.getItem('tareas') || '[]');
+
+    function guardar() { localStorage.setItem('tareas', JSON.stringify(tareas)); }
+    function renderizar() {
+      lista.innerHTML = '';
+      tareas.forEach((tarea, indice) => {
+        const item = document.createElement('li');
+        item.innerHTML = `<span class="${tarea.hecha ? 'hecha' : ''}">${tarea.texto}</span><button aria-label="Eliminar tarea">Eliminar</button>`;
+        item.querySelector('span').onclick = () => { tarea.hecha = !tarea.hecha; guardar(); renderizar(); };
+        item.querySelector('button').onclick = () => { tareas.splice(indice, 1); guardar(); renderizar(); };
+        lista.append(item);
+      });
+    }
+
+    formulario.addEventListener('submit', evento => {
+      evento.preventDefault();
+      tareas.push({ texto: entrada.value.trim(), hecha: false });
+      entrada.value = '';
+      guardar();
+      renderizar();
+    });
+    renderizar();
+  </script>
+</body>
+</html>

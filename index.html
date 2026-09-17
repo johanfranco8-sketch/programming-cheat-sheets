@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Cheat sheets interactivas de programación.">
+  <title>Programming Cheat Sheets</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.10.0/styles/github-dark.min.css">
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#content">Saltar al contenido</a>
+  <div class="app-shell">
+    <aside class="sidebar" id="sidebar" aria-label="Navegación principal">
+      <div class="brand">
+        <a href="#home" class="brand-link" aria-label="Programming Cheat Sheets, inicio">
+          <span class="brand-mark">&lt;/&gt;</span>
+          <span>Programming<br><strong>Cheat Sheets</strong></span>
+        </a>
+      </div>
+      <nav id="guide-nav" class="guide-nav" aria-label="Guías disponibles"></nav>
+      <div class="sidebar-footer">Hecho para aprender, consultar y programar.</div>
+    </aside>
+
+    <div class="main-area">
+      <header class="topbar">
+        <button class="icon-button menu-button" id="menu-button" aria-label="Abrir navegación" aria-expanded="false">☰</button>
+        <div class="search-wrap">
+          <label class="sr-only" for="search-input">Buscar en la guía actual</label>
+          <input id="search-input" type="search" placeholder="Buscar en esta guía..." autocomplete="off">
+          <span aria-hidden="true">⌕</span>
+        </div>
+        <button class="icon-button" id="theme-toggle" aria-label="Cambiar tema" title="Cambiar tema">☼</button>
+      </header>
+
+      <main id="content" class="content" tabindex="-1">
+        <section id="home-view" class="home-view">
+          <div class="hero">
+            <p class="eyebrow">REFERENCIAS RÁPIDAS PARA PROGRAMAR</p>
+            <h1>Encuentra la sintaxis que necesitas, sin perder el ritmo.</h1>
+            <p>Una colección de cheat sheets y referencias rápidas. Selecciona una tecnología para abrir su documentación.</p>
+          </div>
+          <section aria-labelledby="guides-title">
+            <div class="section-heading">
+              <h2 id="guides-title">Guías disponibles</h2>
+              <span id="guide-count"></span>
+            </div>
+            <div id="guide-cards" class="guide-cards"></div>
+          </section>
+        </section>
+
+        <section id="document-view" class="document-view" hidden>
+          <div class="document-header">
+            <p class="breadcrumb" id="breadcrumb"></p>
+            <div class="document-title-row">
+              <div>
+                <h1 id="document-title"></h1>
+                <p id="document-description"></p>
+              </div>
+              <a id="source-link" class="source-link" href="#" target="_blank" rel="noopener">Ver Markdown ↗</a>
+            </div>
+          </div>
+          <div id="search-status" class="search-status" aria-live="polite"></div>
+          <div class="document-layout">
+            <article id="markdown-content" class="markdown-content"></article>
+            <aside class="toc" aria-label="En esta página">
+              <p>EN ESTA PÁGINA</p>
+              <nav id="toc-links"></nav>
+            </aside>
+          </div>
+        </section>
+
+        <section id="empty-view" class="empty-view" hidden>
+          <h1>Guía no encontrada</h1>
+          <p>La ruta solicitada no existe todavía o el archivo Markdown no está disponible.</p>
+          <a href="#home" class="primary-link">Volver al inicio</a>
+        </section>
+      </main>
+    </div>
+  </div>
+  <div class="overlay" id="overlay" hidden></div>
+
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.10.0/highlight.min.js"></script>
+  <script src="assets/js/app.js"></script>
+</body>
+</html>
